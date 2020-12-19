@@ -40,8 +40,8 @@ export default {
     return {
       // Form表单数据绑定对象
       LoginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       //   Form表单校验规则
       rules: {
