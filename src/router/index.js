@@ -7,6 +7,10 @@ import home from '../components/home.vue'
 import Welcome from '../components/Welcome.vue'
 // eslint-disable-next-line no-unused-vars
 import Users from '../components/User/Users.vue'
+// eslint-disable-next-line no-unused-vars
+import Rights from '../components/power/Rights.vue'
+// eslint-disable-next-line no-unused-vars
+import Roles from '../components/power/Roles.vue'
 
 Vue.use(Router)
 const routes = [
@@ -18,7 +22,9 @@ const routes = [
     redirect: '/Welcome',
     children: [
       { path: '/Welcome', component: Welcome },
-      { path: '/users', component: Users }
+      { path: '/users', component: Users },
+      { path: '/rights', component: Rights },
+      { path: '/roles', component: Roles }
     ]
   }
 ]

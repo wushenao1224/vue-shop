@@ -6,6 +6,7 @@ body,
   margin: 0;
   padding: 0;
   font-size: 62.5%;;
+  min-width: 136.6rem;
 }
 /* 面包屑导航的样式重置 */
 .el-breadcrumb{
