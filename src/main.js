@@ -12,6 +12,8 @@ import './assets/css/global.css'
 // 导入我们的axios
 // eslint-disable-next-line no-unused-vars
 import axios from 'axios'
+// 导入treeTable插件
+import treeTable from 'vue-table-with-tree-grid'
 // 设置请求根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 // 挂载请求拦截器
@@ -25,6 +27,8 @@ axios.interceptors.request.use(config => {
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
+// treeTable注册为全局可用的组件
+Vue.component('tree-table', treeTable)
 
 new Vue({
   router,

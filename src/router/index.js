@@ -1,16 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// eslint-disable-next-line no-unused-vars
 import login from '../components/Login.vue'
 import home from '../components/home.vue'
-// eslint-disable-next-line no-unused-vars
 import Welcome from '../components/Welcome.vue'
-// eslint-disable-next-line no-unused-vars
 import Users from '../components/User/Users.vue'
-// eslint-disable-next-line no-unused-vars
 import Rights from '../components/power/Rights.vue'
-// eslint-disable-next-line no-unused-vars
 import Roles from '../components/power/Roles.vue'
+import Cate from '../components/goods/Cate.vue'
 
 Vue.use(Router)
 const routes = [
@@ -24,7 +20,8 @@ const routes = [
       { path: '/Welcome', component: Welcome },
       { path: '/users', component: Users },
       { path: '/rights', component: Rights },
-      { path: '/roles', component: Roles }
+      { path: '/roles', component: Roles },
+      { path: '/categories', component: Cate }
     ]
   }
 ]
