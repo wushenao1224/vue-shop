@@ -1,42 +1,49 @@
-/* eslint-disable vue/valid-v-for */
 <template>
-   <el-container class="home-container">
-     <!-- 头部区域 -->
+  <el-container class="home-container">
+    <!-- 头部区域 -->
     <el-header>
       <div>
-        <img src="../assets/heima.png" alt="">
+        <img src="../assets/heima.png"
+             alt="">
         <span>电商后台管理系统</span>
       </div>
-      <el-button type="info" @click="exit">退出</el-button></el-header>
+      <el-button type="info"
+                 @click="exit">退出</el-button>
+    </el-header>
     <!-- 主体内容区域 -->
     <el-container>
       <!-- 左边侧边栏区域 -->
       <el-aside :width="isCollapse ? '6.4rem' : '20rem'">
         <!-- 单击导航栏缩小按钮 -->
-        <div class="toggle-button" @click="toggleCollapse">|||</div>
+        <div class="toggle-button"
+             @click="toggleCollapse">|||</div>
         <!-- 导航栏区域 -->
-         <el-menu
-          background-color="#333744"
-          text-color="#fff"
-          active-text-color="#60a2f4"
-          unique-opened
-          :collapse='isCollapse'
-          :collapse-transition='false'
-          router
-          :default-active="activePath">
+        <el-menu background-color="#333744"
+                 text-color="#fff"
+                 active-text-color="#60a2f4"
+                 unique-opened
+                 :collapse='isCollapse'
+                 :collapse-transition='false'
+                 router
+                 :default-active="activePath">
           <!-- default-active接收string，标识某一个子导航栏高亮 -->
           <!-- router开启子导航的router属性，变成访问链接 -->
           <!-- collapse-transition导航栏是否有动画 -->
           <!-- collapse导航栏是否折叠 -->
           <!-- 默认值打开一个子菜单 -->
           <!-- index只接收字符串不接收数值，否则会报错 -->
-          <el-submenu :index="item.id + ''" v-for="item in menulist" :key="item.id">
+          <el-submenu :index="item.id + ''"
+                      v-for="item in menulist"
+                      :key="item.id">
             <template slot="title">
               <i :class="iconsObj[item.id]"></i>
               <span>{{item.authName}}</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item :index="'/' + itemsub.path" v-for="itemsub in item.children" :key="itemsub.id" @click="saveNavState('/' + itemsub.path)">
+            <el-menu-item :index="'/' + itemsub.path"
+                          v-for="itemsub in item.children"
+                          :key="itemsub.id"
+                          @click="saveNavState('/' + itemsub.path)">
               <i class="el-icon-menu"></i>
               <span slot="title">{{itemsub.authName}}</span>
             </el-menu-item>
@@ -99,34 +106,34 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.home-container{
+.home-container {
   height: 100%;
-  .el-header{
-  background-color: #373d41;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 0;
-  align-items: center;
-  color: #fff;
-  font-size: 2rem;
-  >div{
+  .el-header {
+    background-color: #373d41;
     display: flex;
+    justify-content: space-between;
+    padding-left: 0;
     align-items: center;
-    span{
-      margin-left: 1.5rem;
+    color: #fff;
+    font-size: 2rem;
+    > div {
+      display: flex;
+      align-items: center;
+      span {
+        margin-left: 1.5rem;
+      }
     }
   }
-  }
-  .el-aside{
+  .el-aside {
     background-color: #333744;
-    .el-menu{
+    .el-menu {
       border-right: none;
     }
   }
-  .el-main{
+  .el-main {
     background-color: #eaedf1;
   }
-  .iconfont{
+  .iconfont {
     margin-right: 1rem;
   }
   .toggle-button {
